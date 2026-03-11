@@ -23,7 +23,7 @@ public class KoszCommand extends CommandUse {
             return;
         }
 
-        Inventory trashGui = Bukkit.createInventory(null, 54, AdventureUtil.miniMessage("<b><dark_gray>Kosz", null));
+        Inventory trashGui = Bukkit.createInventory(null, 54, AdventureUtil.miniMessage("<b><dark_gray>Kosz", Collections.emptyMap()));
         player.openInventory(trashGui);
     }
 

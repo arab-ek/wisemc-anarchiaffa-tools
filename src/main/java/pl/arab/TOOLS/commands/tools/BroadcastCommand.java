@@ -31,8 +31,8 @@ public class BroadcastCommand extends CommandUse {
         }
 
         String message = String.join(" ", args);
-        var titleComp = AdventureUtil.miniMessage(getPlugin().getPluginConfig().broadcastTitle, null);
-        var subtitleComp = AdventureUtil.miniMessage(message, null);
+        var titleComp = AdventureUtil.miniMessage(getPlugin().getPluginConfig().broadcastTitle, Collections.emptyMap());
+        var subtitleComp = AdventureUtil.miniMessage(message, Collections.emptyMap());
 
         Title.Times times = Title.Times.times(Duration.ofSeconds(1), Duration.ofSeconds(4), Duration.ofSeconds(1));
         Title finalTitle = Title.title(titleComp, subtitleComp, times);

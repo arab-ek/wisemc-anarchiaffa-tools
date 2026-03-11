@@ -3,6 +3,7 @@ package pl.arab.COMMANDMAPUSE;
 import org.bukkit.command.SimpleCommandMap;
 import org.bukkit.plugin.SimplePluginManager;
 import pl.arab.Main;
+import pl.arab.TOOLS.commands.AutoEventCommand;
 import pl.arab.TOOLS.commands.tools.*;
 
 import java.lang.reflect.Field;
@@ -20,7 +21,8 @@ public class CommandMap {
                 new BroadcastCommand(),
                 new KoszCommand(),
                 new KodCommand(),
-                new ChatCommand()
+                new ChatCommand(),
+                new AutoEventCommand()
         ).forEach(this::registerCommands);
     }
 

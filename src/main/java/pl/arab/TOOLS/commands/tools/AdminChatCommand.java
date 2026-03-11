@@ -3,8 +3,9 @@ package pl.arab.TOOLS.commands.tools;
 import org.bukkit.Bukkit;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
-import pl.arab.TOOLS.utils.AdventureUtil;
 import pl.arab.COMMANDMAPUSE.CommandUse;
+import pl.arab.TOOLS.utils.AdventureUtil;
+
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -32,9 +33,9 @@ public class AdminChatCommand extends CommandUse {
 
         Bukkit.getOnlinePlayers().stream()
                 .filter(p -> p.hasPermission("wisemc.adminchat"))
-                .forEach(p -> p.sendMessage(AdventureUtil.miniMessage(format, null)));
+                .forEach(p -> p.sendMessage(AdventureUtil.miniMessage(format, Collections.emptyMap())));
 
-        Bukkit.getConsoleSender().sendMessage(AdventureUtil.miniMessage(format, null));
+        Bukkit.getConsoleSender().sendMessage(AdventureUtil.miniMessage(format, Collections.emptyMap()));
     }
 
     @Override

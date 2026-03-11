@@ -22,13 +22,13 @@ public class KodCommand extends CommandUse {
         }
 
         if (args.length != 1) {
-            player.sendMessage(AdventureUtil.miniMessage(getPlugin().getPluginConfig().msgCodeUsage, null));
+            player.sendMessage(AdventureUtil.miniMessage(getPlugin().getPluginConfig().msgCodeUsage, Collections.emptyMap()));
             return;
         }
 
         String inputCode = args[0].toLowerCase();
 
-        player.sendMessage(AdventureUtil.miniMessage(getPlugin().getPluginConfig().msgCodeSuccess.replace("{CODE}", inputCode), null));
+        player.sendMessage(AdventureUtil.miniMessage(getPlugin().getPluginConfig().msgCodeSuccess.replace("{CODE}", inputCode), Collections.emptyMap()));
     }
 
     @Override

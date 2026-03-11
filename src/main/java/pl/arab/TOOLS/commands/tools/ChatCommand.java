@@ -13,7 +13,7 @@ import java.util.List;
 public class ChatCommand extends CommandUse {
 
     public ChatCommand() {
-        super("chat", Arrays.asList("czat"));
+        super("chat", Collections.singletonList("czat"));
     }
 
     @Override
@@ -24,28 +24,30 @@ public class ChatCommand extends CommandUse {
         }
 
         if (args.length == 0) {
-            sender.sendMessage(AdventureUtil.miniMessage(getPlugin().getPluginConfig().msgChatUsage, null));
+            sender.sendMessage(AdventureUtil.miniMessage(getPlugin().getPluginConfig().msgChatUsage, Collections.emptyMap()));
             return;
         }
 
         switch (args[0].toLowerCase()) {
             case "on":
                 getPlugin().getPluginConfig().chatEnabled = true;
-                Bukkit.broadcast(AdventureUtil.miniMessage("<green>Czat został włączony przez administrację!", null));
+                getPlugin().getPluginConfig().save();
+                Bukkit.broadcast(AdventureUtil.miniMessage("<green>Czat został włączony przez administrację!", Collections.emptyMap()));
                 break;
             case "off":
                 getPlugin().getPluginConfig().chatEnabled = false;
-                Bukkit.broadcast(AdventureUtil.miniMessage("<red>Czat został wyłączony przez administrację!", null));
+                getPlugin().getPluginConfig().save();
+                Bukkit.broadcast(AdventureUtil.miniMessage("<red>Czat został wyłączony przez administrację!", Collections.emptyMap()));
                 break;
             case "clear":
             case "cc":
                 for (int i = 0; i < 100; i++) {
-                    Bukkit.broadcast(AdventureUtil.miniMessage(" ", null));
+                    Bukkit.broadcast(AdventureUtil.miniMessage(" ", Collections.emptyMap()));
                 }
-                Bukkit.broadcast(AdventureUtil.miniMessage("<green>Czat został wyczyszczony!", null));
+                Bukkit.broadcast(AdventureUtil.miniMessage("<green>Czat został wyczyszczony!", Collections.emptyMap()));
                 break;
             default:
-                sender.sendMessage(AdventureUtil.miniMessage(getPlugin().getPluginConfig().msgChatUsage, null));
+                sender.sendMessage(AdventureUtil.miniMessage(getPlugin().getPluginConfig().msgChatUsage, Collections.emptyMap()));
                 break;
         }
     }

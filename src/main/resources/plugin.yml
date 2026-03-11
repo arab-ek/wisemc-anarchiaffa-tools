@@ -5,3 +5,4 @@ api-version: '1.21'
 authors: [ _arab__ ]
 description: WiseMC.PL
 website: https://discord.gg/ZVFjJUZeD3
+depend: [Vault]
